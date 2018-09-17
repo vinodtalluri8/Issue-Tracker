@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'app-enter',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterComponent implements OnInit {
 
-  constructor() { }
+  itemsPath: MenuItem[];
+  home: MenuItem;
+
+  constructor() {
+    this.itemsPath = [
+      { label: 'Enter'},
+      { label: 'Issue Information' }];
+   }
 
   ngOnInit() {
   }

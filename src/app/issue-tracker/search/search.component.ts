@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MockDataService } from "../services/mock-data.service";
 import { MenuItem } from "primeng/api";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -21,7 +22,7 @@ export class SearchComponent implements OnInit {
   dataJson;
   itemsPath: MenuItem[];
 
-  constructor(private mockService: MockDataService) {
+  constructor(private mockService: MockDataService, private router: Router) {
     this.itemsPath = [
       {  label: 'Search'}
       ];
@@ -43,30 +44,6 @@ export class SearchComponent implements OnInit {
       }
     );
   }
-
-    //   changeJobName(event) {
-    //   if (event === 'none') {
-    //     this.selectedJobName = [];
-    //   } else {
-    //     this.selectedJobName = event;
-    //   }
-    // }
-
-    //   changeSource(event) {
-    //   if (event === 'none') {
-    //     this.selectedSource = [];
-    //   } else {
-    //     this.selectedSource = event;
-    //   }
-    // }
-    //   changeBusinessDl(event) {
-    //   if (event === 'none') {
-    //     this.selectedBusinessDl = [];
-    //   } else {
-    //     this.selectedBusinessDl = event;
-    //   }
-    // }
-
 
   disable() {
     if (!this.selectedJobName || !this.priority || !this.status || !this.selectedSource || !this.selectedBusinessDl || !this.classification) {
@@ -90,6 +67,7 @@ export class SearchComponent implements OnInit {
     }
 
     console.log('dataJson', this.dataJson);
+    this.router.navigate(['searchissueresult']);
   }
 
 
@@ -103,4 +81,7 @@ export class SearchComponent implements OnInit {
   this.selectedTechnicalDl = '';
   }
 
+  toResultPage(){
+    this.router.navigate(['/searchissueresult']);
+  }
 }

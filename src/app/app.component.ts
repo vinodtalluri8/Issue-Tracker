@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TIM - TECHNICAL INCIDENT MONITORING';
+  title = 'ISSUE TRACKER';
   src = './assets/DIVA_Home.gif';
   headerStyle = 'header';
 
