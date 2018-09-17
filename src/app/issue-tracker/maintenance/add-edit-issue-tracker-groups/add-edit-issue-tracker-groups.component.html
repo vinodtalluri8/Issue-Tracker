@@ -1,3 +1,77 @@
-<p>
-  add-edit-issue-tracker-groups works!
-</p>
+<div class="panel panel-default maindivmargin">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 padding-left-10">
+      <app-breadcrumbs [items]='itemsPath'></app-breadcrumbs>
+    </div>
+  </div>
+  <div class="panel-heading section-padding">
+    <h3 *ngIf="isEdit" class="panel-title">Add Issue Tracker Groups</h3>
+    <h3 *ngIf="!isEdit" class="panel-title">Edit Issue Tracker Groups</h3>
+  </div>
+
+  <div class="panel-body section-padding">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-xs-4">
+        
+        <div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <label class="control-label">Group Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <label class="control-label">Department ID</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-lg-4 col-md-4 col-xs-4">
+         <div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <label class="control-label">Falg Active</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <label class="control-label">Email Lists</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row addCheckListButtons">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+      <app-button (click)="saveData()" label="Search" styleClass='button-action'></app-button>
+      <app-button (click)="resetAll()" label="Clear All" styleClass='button-action'></app-button>
+    </div>
+  </div>
+</div>

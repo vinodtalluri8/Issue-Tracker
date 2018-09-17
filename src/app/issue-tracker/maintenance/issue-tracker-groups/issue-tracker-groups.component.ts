@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-issue-tracker-groups',
@@ -22,7 +23,7 @@ export class IssueTrackerGroupsComponent implements OnInit {
   selectedProgram;
   selectedFilter;
 
-  constructor() {
+  constructor(private router : Router) {
      this.isPaginator = true;
     this.filterable = true;
     this.exportFileName = 'Checklists Scheduled';
@@ -78,5 +79,12 @@ export class IssueTrackerGroupsComponent implements OnInit {
     }
     this.selectedRows = value;
     // console.log(' mesagepage ', this.msgs);
+  }
+
+  addNew(){
+    this.router.navigate(['issuetracker/add']);
+  }
+  edit(){
+    this.router.navigate(['issuetracker/edit']);
   }
 }

@@ -24,8 +24,8 @@ const routes: Routes = [
 },
   { path:'issuetrackergroup', component: IssueTrackerGroupsComponent},
   {path:'searchissueresult', component: SearchIssuesResultComponent},
-  {path:'addissuetracker', component: AddEditIssueTrackerGroupsComponent},
-  {path:'editissuetracker', component: AddEditIssueTrackerGroupsComponent}
+  {path:'issuetracker/:formtype', component: AddEditIssueTrackerGroupsComponent}
+  // {path:'editissuetracker', component: AddEditIssueTrackerGroupsComponent}
   ];
 
 @NgModule({
