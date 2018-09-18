@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-search-issues-result',
@@ -22,7 +23,7 @@ export class SearchIssuesResultComponent implements OnInit {
   selectedProgram;
   selectedFilter;
 
-  constructor() {
+  constructor(private router: Router) {
      this.isPaginator = true;
     this.filterable = true;
     this.exportFileName = 'Checklists Scheduled';
@@ -87,6 +88,10 @@ export class SearchIssuesResultComponent implements OnInit {
     }
     this.selectedRows = value;
     // console.log(' mesagepage ', this.msgs);
+  }
+
+  edit(){
+    this.router.navigate(['/enter/issue']);
   }
 
 }

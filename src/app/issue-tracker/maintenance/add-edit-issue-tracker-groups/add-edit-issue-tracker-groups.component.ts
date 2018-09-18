@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from "primeng/api";
 import { ActivatedRoute } from "@angular/router";
+import { MockDataService } from "../../services/mock-data.service";
 
 @Component({
   selector: 'app-add-edit-issue-tracker-groups',
@@ -12,23 +13,76 @@ export class AddEditIssueTrackerGroupsComponent implements OnInit {
   itemsPath: MenuItem[];
   home: MenuItem;
   isEdit;
-  
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.queryParams.subscribe(params => { 
-      console.log('params......',params['formtype']);
-        if(params['formtype'] == "edit"){
-          this.isEdit = true;
-        }else{
-          this.isEdit = false;
-        }
-    });
-    this.itemsPath = [
-      { label: 'Maintenance'},
-      { label: 'Issue Tracker Groups' },
-      { label: 'Add Issue Tracker Groups'}];
-   }
+  groupName;
+  departmentId;
+  flagActive;
+  emailLists;
+  mockDropDownData;
+  mockMultiDropDownData;
+  dataJson;
 
-  ngOnInit() {
+  constructor(private mockService: MockDataService, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe(params => {
+      if (params['formtype'] == "edit") {
+        this.isEdit = true;
+        this.itemsPath = [
+      { label: 'Maintenance' },
+      { label: 'Issue Tracker Groups' },
+      { label: 'Modify Issue Tracker Groups' }];
+      } else {
+        this.isEdit = false;
+        this.itemsPath = [
+      { label: 'Maintenance' },
+      { label: 'Issue Tracker Groups' },
+      { label: 'Add Issue Tracker Groups' }];
+      }
+    })
+    
+  }
+
+    ngOnInit() {
+    this.preloadData();
+  }
+
+  preloadData() {
+    this.mockService.getDropdownData().subscribe(
+      (data) => {
+        this.mockDropDownData = data;
+      }
+    );
+    this.mockService.getMultiDropdownData().subscribe(
+      (data) => {
+        this.mockMultiDropDownData = data;
+      }
+    );
+  }
+
+  disable() {
+    if (!this.groupName || !this.departmentId || !this.flagActive || !this.emailLists ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  saveData() {
+    if (!this.disable()) {
+      this.dataJson = {
+          'groupName': this.groupName,
+          'departmentId': this.departmentId,
+          'flagActive': this.flagActive,
+          'emailLists': this.emailLists
+      };
+    }
+    console.log('dataJson', this.dataJson);
+  }
+
+
+  resetAll() {
+          this.groupName = '';
+          this.departmentId = '';
+          this.flagActive = '';
+          this.emailLists = '';
   }
 
 }

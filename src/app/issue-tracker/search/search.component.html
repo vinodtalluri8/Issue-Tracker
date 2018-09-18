@@ -20,7 +20,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedBusinessDl = $event' [selectedItem]='selectedBusinessDl'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.owner = $event' [selectedItem]='owner'></app-dropdown>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.preparer = $event' [selectedItem]='preparer'></app-dropdown>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.category = $event' [selectedItem]='category'></app-dropdown>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.abstract1= $event' [value]='abstract1' name='control'></app-input-text-area>
+              <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.description= $event' [value]='description' name='control'></app-input-text-area>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.department = $event' [selectedItem]='department'></app-dropdown>
             </div>
           </div>
         </div>
@@ -82,8 +82,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDate = $event' showIcon='true' yearNavigator='true'
-                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDate'></app-calender>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromIncidentDate = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromIncidentDate'></app-calender>
             </div>
           </div>
         </div>
@@ -95,8 +95,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDate = $event' showIcon='true' yearNavigator='true'
-                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDate'></app-calender>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDateReported = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDateReported'></app-calender>
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+              <app-input (inputTextSelected)='this.fromUsDollar = $event' #inputfromUsDollar [value]='fromUsDollar' maxlength="60"></app-input>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.priority = $event' [selectedItem]='priority'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
             </div>
           </div>
         </div>
@@ -134,8 +134,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDate = $event' showIcon='true' yearNavigator='true'
-                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDate'></app-calender>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.toIncidentDate = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='toIncidentDate'></app-calender>
             </div>
           </div>
         </div>
@@ -147,8 +147,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDate = $event' showIcon='true' yearNavigator='true'
-                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDate'></app-calender>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.toDateReported = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='toDateReported'></app-calender>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+              <app-input (inputTextSelected)='this.toUsDollar = $event' #inputtoUsDollar [value]='toUsDollar' maxlength="60"></app-input>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.priority = $event' [selectedItem]='priority'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.gainLoss = $event' [selectedItem]='gainLoss'></app-dropdown>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.classification = $event' [selectedItem]='classification'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.ercIssue = $event' [selectedItem]='ercIssue'></app-dropdown>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.classification = $event' [selectedItem]='classification'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.issueRelatesToControl = $event' [selectedItem]='issueRelatesToControl'></app-dropdown>
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-multiselect [dataSource]='activeEmployees' (selectedMultiSelect)='changeSource($event)' [selectedItems]='selectedSource'></app-multiselect>
+              <app-multiselect [dataSource]='mockMultiDropDownData' (selectedMultiSelect)='changeSource($event)' [selectedItems]='portfolio'></app-multiselect>
             </div>
           </div>
         </div>

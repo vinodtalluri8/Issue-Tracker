@@ -12,13 +12,22 @@ export class SearchComponent implements OnInit {
 
   mockDropDownData;
   mockMultiDropDownData;
-  selectedJobName;
-  priority;
+  owner;
+  preparer;
+  category;
+  description;
+  department;
+  fromIncidentDate;
+  fromDateReported;
+  fromUsDollar;
   status;
-  selectedSource;
-  selectedBusinessDl;
-  classification;
-  selectedTechnicalDl;
+  toIncidentDate;
+  toDateReported;
+  toUsDollar;
+  gainLoss;
+  ercIssue;
+  issueRelatesToControl;
+  portfolio;
   dataJson;
   itemsPath: MenuItem[];
 
@@ -46,7 +55,7 @@ export class SearchComponent implements OnInit {
   }
 
   disable() {
-    if (!this.selectedJobName || !this.priority || !this.status || !this.selectedSource || !this.selectedBusinessDl || !this.classification) {
+    if (!this.owner || !this.preparer || !this.category || !this.description || !this.department || !this.fromIncidentDate || !this.fromDateReported || !this.fromUsDollar || !this.status || !this.toIncidentDate || !this.toDateReported || !this.toUsDollar || !this.gainLoss || !this.ercIssue || !this.issueRelatesToControl || !this.portfolio) {
       return true;
     } else {
       return false;
@@ -56,13 +65,22 @@ export class SearchComponent implements OnInit {
   saveData() {
     if (!this.disable()) {
       this.dataJson = {
-        'selectedJobName' : this.selectedJobName,
-        'priority' : this.priority,
-        'status' : this.status,
-        'selectedSource' : this.selectedSource,
-        'selectedBusinessDl' : this.selectedBusinessDl,
-        'classification' : this.classification,
-        'technicalDl' : this.selectedTechnicalDl
+          'owner': this.owner,
+          'preparer': this.preparer,
+          'category': this.category,
+          'description': this.description,
+          'department': this.department,
+          'fromIncidentDate': this.fromIncidentDate,
+          'fromDateReported': this.fromDateReported,
+          'fromUsDollar': this.fromUsDollar,
+          'status': this.status,
+          'toIncidentDate': this.toIncidentDate,
+          'toDateReported': this.toDateReported,
+          'toUsDollar': this.toUsDollar,
+          'gainLoss': this.gainLoss,
+          'ercIssue': this.ercIssue,
+          'issueRelatesToControl': this.issueRelatesToControl,
+          'portfolio': this.portfolio
       };
     }
 
@@ -72,13 +90,22 @@ export class SearchComponent implements OnInit {
 
 
   resetAll() {
-  this.selectedJobName = '';
-  this.priority = '';
-  this.status = '';
-  this.selectedSource = '';
-  this.selectedBusinessDl = '';
-  this.classification = '';
-  this.selectedTechnicalDl = '';
+          this.owner = '';
+          this.preparer = '';
+          this.category = '';
+          this.description = '';
+          this.department = '';
+          this.fromIncidentDate = new Date();
+          this.fromDateReported = new Date();
+          this.fromUsDollar = '';
+          this.status = '';
+          this.toIncidentDate = new Date();
+          this.toDateReported = new Date();
+          this.toUsDollar = '';
+          this.gainLoss = '';
+          this.ercIssue = '';
+          this.issueRelatesToControl = '';
+          this.portfolio = '';
   }
 
   toResultPage(){

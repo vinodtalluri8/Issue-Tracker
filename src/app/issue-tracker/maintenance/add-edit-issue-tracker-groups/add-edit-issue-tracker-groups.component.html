@@ -5,8 +5,8 @@
     </div>
   </div>
   <div class="panel-heading section-padding">
-    <h3 *ngIf="isEdit" class="panel-title">Add Issue Tracker Groups</h3>
-    <h3 *ngIf="!isEdit" class="panel-title">Edit Issue Tracker Groups</h3>
+    <h3 *ngIf="!isEdit" class="panel-title">Add Issue Tracker Groups</h3>
+    <h3 *ngIf="isEdit" class="panel-title">Modify Issue Tracker Groups</h3>
   </div>
 
   <div class="panel-body section-padding">
@@ -21,7 +21,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+              <app-input (inputTextSelected)='this.groupName = $event' #inputgroupName [value]='groupName' maxlength="60"></app-input>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.departmentId = $event' [selectedItem]='departmentId'></app-dropdown>
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.flagActive = $event' [selectedItem]='flagActive'></app-dropdown>
             </div>
           </div>
         </div>
@@ -60,7 +60,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-input (inputTextSelected)='this.jobName = $event' #inputjobName [value]='jobName' maxlength="60"></app-input>
+              <app-input (inputTextSelected)='this.emailLists = $event' #inputemailLists [value]='emailLists' maxlength="60"></app-input>
             </div>
           </div>
         </div>

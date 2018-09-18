@@ -20,7 +20,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedBusinessDl = $event' [selectedItem]='selectedBusinessDl'></app-dropdown>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.incidentDate = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='incidentDate'></app-calender>
             </div>
           </div>
         </div>
@@ -32,8 +33,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-calender id="calender" class="calWidth" (calenderSelected)='this.fromDate = $event' showIcon='true' yearNavigator='true'
-                monthNavigator='true' yearRange='2000:2030' [inputDate]='fromDate'></app-calender>
+              <app-calender id="calender" class="calWidth" (calenderSelected)='this.dateReported = $event' showIcon='true' yearNavigator='true'
+                monthNavigator='true' yearRange='2000:2030' [inputDate]='dateReported'></app-calender>
             </div>
           </div>
         </div>
@@ -47,7 +48,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.department = $event' [selectedItem]='department'></app-dropdown>
             </div>
           </div>
         </div>
@@ -60,7 +61,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.owner = $event' [selectedItem]='owner'></app-dropdown>
             </div>
           </div>
         </div>
@@ -74,7 +75,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.category = $event' [selectedItem]='category'></app-dropdown>
             </div>
           </div>
         </div>
@@ -87,7 +88,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedSource = $event' [selectedItem]='selectedSource'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.status = $event' [selectedItem]='status'></app-dropdown>
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.selectedBusinessDl = $event' [selectedItem]='selectedBusinessDl'></app-dropdown>
+              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.ercIssue = $event' [selectedItem]='ercIssue'></app-dropdown>
             </div>
           </div>
         </div>
