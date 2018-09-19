@@ -13,34 +13,7 @@
           </div>
         </div>
       </div>
-      <div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Eligible For the Trade Error Account</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.eligibleforTradeError = $event' [selectedItem]='eligibleforTradeError'></app-dropdown>
-          </div>
-        </div>
-      </div>
-      
-      <div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Root Cause</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.rootCause= $event' [value]='rootCause' name='control'></app-input-text-area>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-xs-3">
-      <div>
+       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
             <label class="control-label">Trade Date</label>
@@ -56,34 +29,6 @@
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Settlement Date</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-calender id="calender" class="calWidth" (calenderSelected)='this.settlementDate = $event' showIcon='true' yearNavigator='true'
-              monthNavigator='true' yearRange='2000:2030' [inputDate]='settlementDate'></app-calender>
-          </div>
-        </div>
-      </div>
-      
-      <div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">If No or NA Please Explain</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.noOrNa= $event' [value]='noOrNa' name='control'></app-input-text-area>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-xs-3">
-      <div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
             <label class="control-label">Client Notified</label>
           </div>
         </div>
@@ -96,6 +41,21 @@
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Describe Period Impacted</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.periodImpacted= $event' [value]='periodImpacted' name='control'></app-input-text-area>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
             <label class="control-label">NAV Reviewed by Appropriate Parties</label>
           </div>
         </div>
@@ -105,9 +65,6 @@
           </div>
         </div>
       </div>
-
-    </div>
-    <div class="col-lg-3 col-md-3 col-xs-3">
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
@@ -130,6 +87,72 @@
           <div class="col-sm-12 col-md-12 col-lg-12">
             <app-calender id="calender" class="calWidth" (calenderSelected)='this.dateReceivable = $event' showIcon='true' yearNavigator='true'
               monthNavigator='true' yearRange='2000:2030' [inputDate]='dateReceivable'></app-calender>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">> 1/2 of 1% During Period</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.duringPeriod = $event' [selectedItem]='duringPeriod'></app-dropdown>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">If No or NA Please Explain</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.noOrNa= $event' [value]='noOrNa' name='control'></app-input-text-area>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Reprocessing Performed</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.reprocessingPerformed = $event' [selectedItem]='reprocessingPerformed'></app-dropdown>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Amount Reimbursed</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.amountReimbursed = $event' [selectedItem]='amountReimbursed'></app-dropdown>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Shareholders Reimbursed</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.shareholdersReimbursed = $event' [selectedItem]='shareholdersReimbursed'></app-dropdown>
           </div>
         </div>
       </div>

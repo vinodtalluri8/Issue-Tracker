@@ -25,6 +25,10 @@ import { MfscComponent } from './issue-tracker/enter/mfsc/mfsc.component';
 import { AttachmentsComponent } from './issue-tracker/enter/attachments/attachments.component';
 import { SearchIssuesResultComponent } from './issue-tracker/search/search-issues-result/search-issues-result.component';
 import { AddEditIssueTrackerGroupsComponent } from './issue-tracker/maintenance/add-edit-issue-tracker-groups/add-edit-issue-tracker-groups.component';
+import { CompilanceViolationComponent } from './issue-tracker/enter/compilance-violation/compilance-violation.component';
+import { PpmNonErcComponent } from './issue-tracker/enter/ppm-non-erc/ppm-non-erc.component';
+import { NavErrorComponent } from './issue-tracker/enter/nav-error/nav-error.component';
+import { TradeErrorComponent } from './issue-tracker/enter/trade-error/trade-error.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { AddEditIssueTrackerGroupsComponent } from './issue-tracker/maintenance/
     MfscComponent,
     AttachmentsComponent,
     SearchIssuesResultComponent,
-    AddEditIssueTrackerGroupsComponent
+    AddEditIssueTrackerGroupsComponent,
+    CompilanceViolationComponent,
+    PpmNonErcComponent,
+    NavErrorComponent,
+    TradeErrorComponent
   ],
   imports: [
     BrowserModule,

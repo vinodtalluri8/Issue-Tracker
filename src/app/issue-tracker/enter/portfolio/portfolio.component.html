@@ -1,3 +1,54 @@
-<p>
-  portfolio works!
-</p>
+<div class="panel-body section-padding">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Impact MFS Portfolio</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.impactMfsPortfolio = $event' [selectedItem]='impactMfsPortfolio'></app-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Portfolio/Account Type</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.portfolio = $event' [selectedItem]='portfolio'></app-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Affected Portfolio(s)/Account(s)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-multiselect [dataSource]='mockMultiDropDownData' [selectedItems]='affectedPortfolio'></app-multiselect>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row addCheckListButtons">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+      <app-button (click)="saveData()" label="Search" styleClass='button-action'></app-button>
+      <app-button (click)="resetAll()" label="Clear All" styleClass='button-action'></app-button>
+    </div>
+  </div>
+  <br><br>
+</div>

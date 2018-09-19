@@ -10,6 +10,10 @@ import { MfscComponent } from "./issue-tracker/enter/mfsc/mfsc.component";
 import { AttachmentsComponent } from "./issue-tracker/enter/attachments/attachments.component";
 import { SearchIssuesResultComponent } from "./issue-tracker/search/search-issues-result/search-issues-result.component";
 import { AddEditIssueTrackerGroupsComponent } from "./issue-tracker/maintenance/add-edit-issue-tracker-groups/add-edit-issue-tracker-groups.component";
+import { CompilanceViolationComponent } from "./issue-tracker/enter/compilance-violation/compilance-violation.component";
+import { PpmNonErcComponent } from "./issue-tracker/enter/ppm-non-erc/ppm-non-erc.component";
+import { NavErrorComponent } from "./issue-tracker/enter/nav-error/nav-error.component";
+import { TradeErrorComponent } from "./issue-tracker/enter/trade-error/trade-error.component";
 
 const routes: Routes = [
   { path:'search', component: SearchComponent},
@@ -19,13 +23,16 @@ const routes: Routes = [
     {path:'issue', component: IssueComponent},
     {path:'portfolio', component: PortfolioComponent},
     {path:'mfsc', component: MfscComponent},
-    {path:'attachments', component: AttachmentsComponent}
+    {path:'attachments', component: AttachmentsComponent},
+    {path:'compilanceviolation', component: CompilanceViolationComponent},
+    {path:'ppmnonerc', component: PpmNonErcComponent},
+    {path:'naverror', component: NavErrorComponent},
+    {path:'tradeerror', component: TradeErrorComponent}
   ]
 },
   { path:'issuetrackergroup', component: IssueTrackerGroupsComponent},
   {path:'searchissueresult', component: SearchIssuesResultComponent},
   {path:'issuetracker/:formtype', component: AddEditIssueTrackerGroupsComponent}
-  // {path:'editissuetracker', component: AddEditIssueTrackerGroupsComponent}
   ];
 
 @NgModule({

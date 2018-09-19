@@ -21,7 +21,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.eligibleforTradeError = $event' [selectedItem]='eligibleforTradeError'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' [selectedItem]='eligibleforTradeError'></app-dropdown>
           </div>
         </div>
       </div>
@@ -29,12 +29,12 @@
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Root Cause</label>
+            <label class="control-label">Sub Category</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.rootCause= $event' [value]='rootCause' name='control'></app-input-text-area>
+            <app-input-text-area rowSize='6' [value]='subCategory' name='control'></app-input-text-area>
           </div>
         </div>
       </div>
@@ -43,30 +43,28 @@
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Trade Date</label>
+            <label class="control-label">Eligible For the Trade Error Account</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-calender id="calender" class="calWidth" (calenderSelected)='this.tradeDate = $event' showIcon='true' yearNavigator='true'
-              monthNavigator='true' yearRange='2000:2030' [inputDate]='tradeDate'></app-calender>
+            <app-dropdown [datasource]='mockDropDownData' [selectedItem]='enhancement'></app-dropdown>
           </div>
         </div>
       </div>
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Settlement Date</label>
+            <label class="control-label">Trade Date</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-calender id="calender" class="calWidth" (calenderSelected)='this.settlementDate = $event' showIcon='true' yearNavigator='true'
-              monthNavigator='true' yearRange='2000:2030' [inputDate]='settlementDate'></app-calender>
+            <app-calender id="calender" class="calWidth" showIcon='true' yearNavigator='true'
+              monthNavigator='true' yearRange='2000:2030' [inputDate]='resolutionDate'></app-calender>
           </div>
         </div>
       </div>
-      
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
@@ -75,7 +73,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.noOrNa= $event' [value]='noOrNa' name='control'></app-input-text-area>
+            <app-input-text-area rowSize='6' [value]='notes' name='control'></app-input-text-area>
           </div>
         </div>
       </div>
@@ -89,7 +87,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.clientNotified = $event' [selectedItem]='clientNotified'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' [selectedItem]='actionComplete'></app-dropdown>
           </div>
         </div>
       </div>
@@ -101,11 +99,23 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.navReviewed = $event' [selectedItem]='navReviewed'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' [selectedItem]='issuerelatetocontrol'></app-dropdown>
           </div>
         </div>
       </div>
-
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Settlement Date</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-calender id="calender" class="calWidth" showIcon='true' yearNavigator='true'
+              monthNavigator='true' yearRange='2000:2030' [inputDate]='resolutionDate'></app-calender>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-lg-3 col-md-3 col-xs-3">
       <div>
@@ -116,7 +126,7 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input (inputTextSelected)='this.basicPointImpact = $event' #inputbasicPointImpact [value]='basicPointImpact' maxlength="60"></app-input>
+            <app-input (inputTextSelected)='this.fromUsDollar = $event' #inputfromUsDollar [value]='fromUsDollar' maxlength="60"></app-input>
           </div>
         </div>
       </div>
@@ -128,8 +138,8 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-calender id="calender" class="calWidth" (calenderSelected)='this.dateReceivable = $event' showIcon='true' yearNavigator='true'
-              monthNavigator='true' yearRange='2000:2030' [inputDate]='dateReceivable'></app-calender>
+            <app-calender id="calender" class="calWidth" (calenderSelected)='this.resolutionDate = $event' showIcon='true' yearNavigator='true'
+              monthNavigator='true' yearRange='2000:2030' [inputDate]='resolutionDate'></app-calender>
           </div>
         </div>
       </div>

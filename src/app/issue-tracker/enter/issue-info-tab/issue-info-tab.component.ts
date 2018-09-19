@@ -15,7 +15,11 @@ export class IssueInfoTabComponent implements OnInit {
           {label: 'Issue', routerLink: 'issue'},
           {label: 'Portfolio/Account', routerLink: 'portfolio'},
           {label: 'MFSC', routerLink: 'mfsc'},
-          {label: 'Attachments', routerLink: 'attachments'}
+          {label: 'Attachments', routerLink: 'attachments'},
+          {label: 'Compliance Violation', routerLink: 'compilanceviolation'},
+          {label: 'PPM Non-ERC', routerLink: 'ppmnonerc'},
+          {label: 'Nav Error', routerLink: 'naverror'},
+          {label: 'Trade Error', routerLink: 'tradeerror'}
       ];
   }
 

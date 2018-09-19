@@ -1,3 +1,38 @@
-<p>
-  attachments works!
-</p>
+<div class="panel-body section-padding">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-xs-3">
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">New Attachments</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input (inputTextSelected)='this.newattachments = $event' #inputnewattachments [value]='newattachments' maxlength="60"></app-input>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <label class="control-label">Description</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.description= $event' [value]='description' name='control'></app-input-text-area>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row addCheckListButtons">
+    <div class="col-sm-8 col-md-8 col-lg-8">
+      <app-button (click)="saveData()" label="Search" styleClass='button-action'></app-button>
+      <app-button (click)="resetAll()" label="Clear All" styleClass='button-action'></app-button>
+    </div>
+  </div>
+  <br><br>
+</div>

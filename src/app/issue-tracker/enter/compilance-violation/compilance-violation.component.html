@@ -21,20 +21,20 @@
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.eligibleforTradeError = $event' [selectedItem]='eligibleforTradeError'></app-dropdown>
+            <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.eligibleforTradeAccount = $event' [selectedItem]='eligibleforTradeAccount'></app-dropdown>
           </div>
         </div>
       </div>
-      
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Root Cause</label>
+            <label class="control-label">Date Receivable Recorded to Fund</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.rootCause= $event' [value]='rootCause' name='control'></app-input-text-area>
+            <app-calender id="calender" class="calWidth" (calenderSelected)='this.dateReceivableRecorded = $event' showIcon='true' yearNavigator='true'
+              monthNavigator='true' yearRange='2000:2030' [inputDate]='dateReceivableRecorded'></app-calender>
           </div>
         </div>
       </div>
@@ -66,16 +66,15 @@
           </div>
         </div>
       </div>
-      
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">If No or NA Please Explain</label>
+            <label class="control-label">Basis Point Impact</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.noOrNa= $event' [value]='noOrNa' name='control'></app-input-text-area>
+            <app-input (inputTextSelected)='this.basicPointImpact = $event' #inputbasicPointImpact [value]='basicPointImpact' maxlength="60"></app-input>
           </div>
         </div>
       </div>
@@ -111,28 +110,16 @@
       <div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Basis Point Impact</label>
+            <label class="control-label">If No or NA Please Explain</label>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-input (inputTextSelected)='this.basicPointImpact = $event' #inputbasicPointImpact [value]='basicPointImpact' maxlength="60"></app-input>
+            <app-input-text-area rowSize='6' (inputTextAreaSelected)='this.noOrNa= $event' [value]='noOrNa' name='control'></app-input-text-area>
           </div>
         </div>
       </div>
-      <div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <label class="control-label">Date Receivable Recorded to Fund</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <app-calender id="calender" class="calWidth" (calenderSelected)='this.dateReceivable = $event' showIcon='true' yearNavigator='true'
-              monthNavigator='true' yearRange='2000:2030' [inputDate]='dateReceivable'></app-calender>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <br>

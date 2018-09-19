@@ -1,0 +1,94 @@
+
+.addCheckListButtons {
+    position: absolute !important;
+    width: 100%;
+    margin-left: -63px;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+::ng-deep .calWidth{
+    width: 100% !important;
+}
+
+.paddingButtons {
+    margin-top: 20px!important;
+}
+
+::ng-deep .dishide{
+    visibility : hidden;
+}
+
+.ui-dropdown .ui-dropdown-panel {
+    min-width: 100%;
+    width: max-content;
+}
+
+label.required:after {
+    content: " *";
+    color: red;
+}
+
+.title-input {
+    width: 16em;
+}
+
+.arrow-color {
+    color: black;
+    margin-left: -1.7em;
+    font-weight: initial;
+    cursor: pointer;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-style: normal;
+    text-align: left;
+    padding-top: 15px !important;
+    padding-bottom: 0px !important;
+}
+
+.section-padding {
+    padding-top: 0px;
+}
+
+.panel-title h3 {
+    font-size: 24px;
+}
+
+app-button {
+    padding-left: 20px;
+}
+
+app-input-text-area {
+    width: 100%;
+}
+
+app-input {
+    width: 100%;
+}
+
+app-calender {
+    width: 100%;
+}
+
+#depFreq, #group {
+    padding-left: 4em;
+    padding-right: 1px;
+}
+.push-right {
+    float: right;
+}
+.container{
+    padding-left: 34px;
+}
+
+h3.panel-title{
+    font-size: 24px !important;
+}
+
+.maindivmargin{
+    margin-left: -3px;
+}
