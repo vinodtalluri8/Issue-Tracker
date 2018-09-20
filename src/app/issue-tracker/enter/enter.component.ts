@@ -206,14 +206,19 @@ export class EnterComponent implements OnInit {
       ];
       if(event.name == "MFSC"){
         this.selectedValue.push({label: 'MFSC', routerLink: 'mfsc'});
+        this.router.navigate(['/enter/mfsc']);
       }else if(event.name == "Compilance Violation"){
         this.selectedValue.push({label: 'Compliance Violation', routerLink: 'compilanceviolation'});
+        this.router.navigate(['/enter/compilanceviolation']);
       }else if(event.name == "PPM Non-ERC"){
         this.selectedValue.push({label: 'PPM Non-ERC', routerLink: 'ppmnonerc'});
+        this.router.navigate(['/enter/ppmnonerc']);
       }else if(event.name == "Nav Error"){
         this.selectedValue.push({label: 'Nav Error', routerLink: 'naverror'});
+        this.router.navigate(['/enter/naverror']);
       }else if(event.name == "Trade Error"){
-        this.selectedValue.push({label: 'Trade Error', routerLink: 'tradeerror'})
+        this.selectedValue.push({label: 'Trade Error', routerLink: 'tradeerror'});
+        this.router.navigate(['/enter/tradeerror']);
       }else ;
   }
 
