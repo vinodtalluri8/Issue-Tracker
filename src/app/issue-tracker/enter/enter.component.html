@@ -75,7 +75,8 @@
           </div>
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
-              <app-dropdown [datasource]='mockDropDownData' (selectedItemChange)='this.category = $event' [selectedItem]='category'></app-dropdown>
+              <app-dropdown [datasource]='sampleDropDown' 
+               (selectedItemChange)='this.category = $event;changeCat($event)' [selectedItem]='category'></app-dropdown>
             </div>
           </div>
         </div>
@@ -110,7 +111,7 @@
       </div>
     </div>
   </div>
-  <app-issue-info-tab></app-issue-info-tab>
+  <app-issue-info-tab [items]="selectedValue"></app-issue-info-tab>
   <!--<br>
   <div class="row addCheckListButtons">
     <div class="col-sm-8 col-md-8 col-lg-8">
